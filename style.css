@@ -1,0 +1,172 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(120deg, #e5d9ff, #dff1ff);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.task-card,
+.summary-card {
+    background: #fff;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    animation: fade 0.6s ease;
+}
+
+.task-text {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.button-row { margin-top: 15px; }
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.complete { background: #4CAF50; }
+.skip { background: #F44336; }
+.new { background: #2196F3; }
+
+.btn:hover { transform: scale(1.06); opacity: 0.9; }
+.btn:active { transform: scale(0.94); }
+
+.summary-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.label { color: #444; }
+.value { font-size: 28px; margin: 5px 0; }
+
+.bar {
+    width: 120px;
+    height: 8px;
+    background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: auto;
+}
+
+#completedBar { height: 100%; background: #4CAF50; width: 0%; transition: 0.5s; }
+#skippedBar { height: 100%; background: #F44336; width: 0%; transition: 0.5s; }
+
+.streak {
+    background: #f3f3f3;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 6px;
+}
+
+/* ---------- CORNER BUTTONS ---------- */
+
+.corner-btn {
+    position: fixed;
+    bottom: 20px;
+    padding: 14px 18px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    background: #6a5acd;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+.corner-btn.left { left: 20px; }
+.corner-btn.right { right: 20px; }
+
+.corner-btn:hover { transform: scale(1.15); }
+
+/* ---------- MODALS ---------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 8% auto;
+    padding: 25px;
+    width: 50%;
+    border-radius: 15px;
+    animation: fade 0.4s ease;
+}
+
+.close {
+    font-size: 26px;
+    float: right;
+    cursor: pointer;
+}
+
+.dev-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.dev-list li {
+    font-size: 17px;
+    margin: 6px 0;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.submit-btn {
+    background: #6a5acd;
+    padding: 12px 20px;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}

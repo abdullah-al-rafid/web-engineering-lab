@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time-Saving Habit Booster</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="title">Time-Saving Habit Booster</h1>
+      <p class="subtitle">One focused 20-minute productivity task every day</p>
+
+      <div class="task-card">
+        <h2>Today's task</h2>
+        <p id="taskText" class="task-text">Loading...</p>
+        <p class="task-sub">20 minutes • micro-habit</p>
+
+        <div class="button-row">
+          <button id="completeBtn" class="btn complete">✔ Complete</button>
+          <button id="skipBtn" class="btn skip">✖ Skip</button>
+          <button id="newTaskBtn" class="btn new">🔄 Generate New Task</button>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <h2>Weekly Summary (last 7 days)</h2>
+
+        <div class="summary-grid">
+          <div>
+            <p class="label">Completed</p>
+            <p id="completedCount" class="value">0</p>
+            <div class="bar"><div id="completedBar"></div></div>
+          </div>
+
+          <div>
+            <p class="label">Skipped</p>
+            <p id="skippedCount" class="value">0</p>
+            <div class="bar"><div id="skippedBar"></div></div>
+          </div>
+
+          <div>
+            <p class="label">Completion %</p>
+            <p id="percentCount" class="value">0%</p>
+            <p id="streakLabel" class="streak">No streak yet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT BUTTON (BOTTOM LEFT) -->
+    <button id="copyrightBtn" class="corner-btn left">©</button>
+
+    <!-- CONTACT BUTTON (BOTTOM RIGHT) -->
+    <button id="contactBtn" class="corner-btn right">✉</button>
+
+    <!-- COPYRIGHT MODAL -->
+    <div id="copyrightModal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-close="copyrightModal">&times;</span>
+        <h2>Developer Information</h2>
+
+        <ul class="dev-list">
+          <li>Abdullah Al Rafid — <strong>0242220005101623</strong></li>
+          <li>Jannatul Islam — <strong>0242220005101772</strong></li>
+          <li>Afroja Akter — <strong>0242220005101458</strong></li>
+          <li>Sabab Ahmed — <strong>0242220005101562</strong></li>
+        </ul>
+
+        <h3>Copyright Rules</h3>
+        <p class="copyright-text">
+          This project is protected under © 2025 Time-Saving Habit Booster.
+          Unauthorized copying, distribution, or modification of this project is
+          strictly prohibited without written permission from the developers.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-close="contactModal">&times;</span>
+        <h2>Contact Us</h2>
+
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <textarea
+            placeholder="Write your complaint or suggestion..."
+            required
+          ></textarea>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

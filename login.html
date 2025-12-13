@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time-Saving Habit Booster - Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .auth-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 450px;
+        width: 100%;
+        padding: 50px 40px;
+        animation: slideIn 0.5s ease;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .logo-section {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .logo-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        margin-bottom: 15px;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        color: #718096;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .tab-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+        background: #f7fafc;
+        padding: 5px;
+        border-radius: 12px;
+      }
+
+      .tab-btn {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: transparent;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #718096;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn.active {
+        background: white;
+        color: #667eea;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-section {
+        display: none;
+      }
+
+      .form-section.active {
+        display: block;
+        animation: fadeIn 0.4s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #4a5568;
+        margin-bottom: 8px;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      input {
+        width: 100%;
+        padding: 14px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        transition: all 0.3s ease;
+        background: #f7fafc;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .input-icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+      }
+
+      .error-msg {
+        color: #e53e3e;
+        font-size: 13px;
+        margin-top: 6px;
+        display: none;
+      }
+
+      .error-msg.show {
+        display: block;
+      }
+
+      input.error {
+        border-color: #e53e3e;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .submit-btn:active {
+        transform: translateY(0);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .info-box {
+        background: #edf2f7;
+        padding: 14px;
+        border-radius: 10px;
+        margin-top: 20px;
+        font-size: 13px;
+        color: #4a5568;
+        border-left: 4px solid #667eea;
+      }
+
+      .info-box strong {
+        color: #2d3748;
+      }
+
+      .diu-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      @media (max-width: 500px) {
+        .auth-container {
+          padding: 40px 30px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="logo-section">
+        <div class="logo-icon">⏱️</div>
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Boost your productivity with daily habits</p>
+        <span class="diu-badge">DIU STUDENTS ONLY</span>
+      </div>
+
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div class="form-section active" id="login-form">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="login-email">DIU Email Address</label>
+            <div class="input-wrapper">
+              <input
+                type="email"
+                id="login-email"
+                placeholder="example@diu.edu.bd"
+                required
+              />
+              <span class="input-icon">📧</span>
+            </div>
+            <p class="error-msg" id="login-email-error">
+              Please enter a valid DIU email
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                required
+              />
+              <span class="input-icon">🔒</span>
+            </div>
+            <p class="error-msg" id="login-password-error">
+              Password is required
+            </p>
+          </div>
+
+          <button type="submit" class="submit-btn">Login to Dashboard</button>
+        </form>
+      </div>
+
+      <!-- SIGNUP FORM -->
+      <div class="form-section" id="signup-form">
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="signup-name"
+                placeholder="Your full name"
+                required
+              />
+              <span class="input-icon">👤</span>
+            </div>
+            <p class="error-msg" id="signup-name-error">Name is required</p>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">DIU Email Address</label>
+            <div class="input-wrapper">
+              <input
+                type="email"
+                id="signup-email"
+                placeholder="example@diu.edu.bd"
+                required
+              />
+              <span class="input-icon">📧</span>
+            </div>
+            <p class="error-msg" id="signup-email-error">
+              Please enter a valid DIU email
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="signup-password"
+                placeholder="Create a strong password"
+                required
+              />
+              <span class="input-icon">🔒</span>
+            </div>
+            <p class="error-msg" id="signup-password-error">
+              Password must be at least 6 characters
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-confirm">Confirm Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="signup-confirm"
+                placeholder="Re-enter your password"
+                required
+              />
+              <span class="input-icon">✓</span>
+            </div>
+            <p class="error-msg" id="signup-confirm-error">
+              Passwords do not match
+            </p>
+          </div>
+
+          <button type="submit" class="submit-btn">Create Account</button>
+
+          <div class="info-box">
+            <strong>Note:</strong> Only students with valid
+            <strong>@diu.edu.bd</strong> email addresses can register.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Tab switching
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const formSections = document.querySelectorAll(".form-section");
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetTab = btn.dataset.tab;
+
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          formSections.forEach((section) => {
+            section.classList.remove("active");
+            if (section.id === `${targetTab}-form`) {
+              section.classList.add("active");
+            }
+          });
+        });
+      });
+
+      // Email validation for DIU
+      function validateDIUEmail(email) {
+        const diuPattern = /^[a-zA-Z0-9._-]+@diu\.edu\.bd$/;
+        return diuPattern.test(email);
+      }
+
+      // Show error
+      function showError(inputId, errorId, message) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        input.classList.add("error");
+        error.textContent = message;
+        error.classList.add("show");
+      }
+
+      // Clear error
+      function clearError(inputId, errorId) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        input.classList.remove("error");
+        error.classList.remove("show");
+      }
+
+      // LOGIN FORM
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("login-email").value.trim();
+        const password = document.getElementById("login-password").value;
+
+        let isValid = true;
+
+        // Clear previous errors
+        clearError("login-email", "login-email-error");
+        clearError("login-password", "login-password-error");
+
+        // Validate email
+        if (!validateDIUEmail(email)) {
+          showError(
+            "login-email",
+            "login-email-error",
+            "Please use a valid @diu.edu.bd email"
+          );
+          isValid = false;
+        }
+
+        // Validate password
+        if (password.length === 0) {
+          showError(
+            "login-password",
+            "login-password-error",
+            "Password is required"
+          );
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Check if user exists
+        const users = JSON.parse(localStorage.getItem("diu_users") || "[]");
+        const user = users.find(
+          (u) => u.email === email && u.password === password
+        );
+
+        if (user) {
+          localStorage.setItem("diu_logged_in_user", JSON.stringify(user));
+          alert("Login successful! Redirecting...");
+          window.location.href = "index.html"; // Redirect to main app
+        } else {
+          showError(
+            "login-email",
+            "login-email-error",
+            "Invalid email or password"
+          );
+        }
+      });
+
+      // SIGNUP FORM
+      document.getElementById("signupForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("signup-name").value.trim();
+        const email = document.getElementById("signup-email").value.trim();
+        const password = document.getElementById("signup-password").value;
+        const confirm = document.getElementById("signup-confirm").value;
+
+        let isValid = true;
+
+        // Clear previous errors
+        clearError("signup-name", "signup-name-error");
+        clearError("signup-email", "signup-email-error");
+        clearError("signup-password", "signup-password-error");
+        clearError("signup-confirm", "signup-confirm-error");
+
+        // Validate name
+        if (name.length === 0) {
+          showError(
+            "signup-name",
+            "signup-name-error",
+            "Full name is required"
+          );
+          isValid = false;
+        }
+
+        // Validate email
+        if (!validateDIUEmail(email)) {
+          showError(
+            "signup-email",
+            "signup-email-error",
+            "Please use a valid @diu.edu.bd email"
+          );
+          isValid = false;
+        }
+
+        // Validate password
+        if (password.length < 6) {
+          showError(
+            "signup-password",
+            "signup-password-error",
+            "Password must be at least 6 characters"
+          );
+          isValid = false;
+        }
+
+        // Validate confirm password
+        if (password !== confirm) {
+          showError(
+            "signup-confirm",
+            "signup-confirm-error",
+            "Passwords do not match"
+          );
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Check if email already exists
+        const users = JSON.parse(localStorage.getItem("diu_users") || "[]");
+        if (users.some((u) => u.email === email)) {
+          showError(
+            "signup-email",
+            "signup-email-error",
+            "This email is already registered"
+          );
+          return;
+        }
+
+        // Register user
+        const newUser = {
+          name,
+          email,
+          password,
+          createdAt: new Date().toISOString(),
+        };
+        users.push(newUser);
+        localStorage.setItem("diu_users", JSON.stringify(users));
+
+        alert("Account created successfully! Please login.");
+
+        // Switch to login tab
+        document.querySelector('.tab-btn[data-tab="login"]').click();
+        document.getElementById("login-email").value = email;
+      });
+
+      // Real-time validation
+      document.getElementById("login-email").addEventListener("input", () => {
+        clearError("login-email", "login-email-error");
+      });
+
+      document.getElementById("signup-email").addEventListener("input", () => {
+        clearError("signup-email", "signup-email-error");
+      });
+    </script>
+  </body>
+</html>
